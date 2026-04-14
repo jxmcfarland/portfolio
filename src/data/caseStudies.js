@@ -102,16 +102,81 @@ export const caseStudies = [
         },
       {
         title: 'Outcomes & Impact',
-        content: 'Design shifted from outsourced execution to a trusted strategic partner embedded in roadmap planning, OKR alignment, and discovery ceremonies. The team was built and retained through direct hiring, acquisition integration, and internal mobility. Kickoff, discovery, and validation ceremonies became standard for all projects.',
-        metrics: [
-          { value: '70%', label: 'Reduction in poor UX feedback since redesign began' },
-          { value: '75%', label: 'Reduction in merge request approval time' },
-          { value: '40%', label: 'Reduction in design cycle time' },
+        subsections: [
+            {
+            heading: 'Organizational Shift',
+            fullWidth: true,
+            bullets: [
+                'Transformed design from outsourced execution to a trusted in-house strategic partner',
+                'Embedded UX into roadmap planning, research, and decision-making',
+                'Made kickoff, discovery, and validation ceremonies standard for all projects',
+            ],
+            },
+            {
+            heading: 'Team and Process Maturity',
+            bullets: [
+                'Built and retained a UX team through direct hiring, acquisition integration, and internal mobility',
+                'Launched Canto\'s first design system, adopted by both Design and Engineering',
+                'Reduced merge request approval time by 75% through tighter collaboration and design definition',
+            ],
+            },
+            {
+            heading: 'Product and User Impact',
+            bullets: [
+                'Simplified the asset library\'s interface and information architecture to improve core workflows and overall usability',
+                'Reduced poor UX feedback by 70% since the redesign began',
+                'Simplified upload, metadata, search, and sharing based on ongoing feedback',
+            ],
+            },
         ],
-      },
+        metrics: [
+            { value: '70%', label: 'Reduction in negative UX feedback since redesign began', trend: 'down' },
+            { value: '75%', label: 'Reduction in merge request approval time', trend: 'down' },
+            { value: '40%', label: 'Increase in design system adoption by Engineering', trend: 'up' },
+        ],
+        },
       {
-        title: 'Reflections & What\'s Next',
-        content: 'Elevated design from a service function to a strategic pillar of product development. Learned how to scale design influence through systems, partnerships, and thoughtful change management. Reaffirmed that sustainable UX transformation depends on strong cross-functional collaboration and trust. Next: continuing the full-platform redesign, expanding design system coverage, and exploring AI-driven solutions to reduce friction in metadata organization and Portals workflows.',
+        title: "Reflections & What's Next",
+        hasLayout: true,
+        subsections: [
+            {
+            heading: 'What Was Achieved',
+            fullWidth: true,
+            bullets: [
+                'Elevated design from a service function to a strategic pillar of product development',
+                'Learned how to scale design influence through systems, partnerships, and thoughtful change management',
+                'Reaffirmed that sustainable UX transformation depends on strong cross-functional collaboration and trust',
+            ],
+            },
+            {
+            heading: "What's Next",
+            bullets: [
+                'Continuing the full-platform redesign and expanding design system coverage',
+                'Exploring AI-driven solutions to reduce friction in metadata organization and Portals (customized asset sharing sites) workflows',
+                'Researching AI tooling to evolve design ops beyond traditional process improvements',
+            ],
+            whatsNext: [
+                {
+                    icon: 'metadata',
+                    title: 'AI for Metadata Organization',
+                    desc: 'Auto-tagging and smart categorization of assets',
+                    timeline: 'Beta: Q4 2025',
+                },
+                {
+                    icon: 'portals',
+                    title: 'AI Portals Creation',
+                    desc: 'Personalized content hubs powered by AI',
+                    timeline: 'Beta: Q2 2026',
+                },
+                {
+                    icon: 'ops',
+                    title: 'Design Ops Enhancements',
+                    desc: 'AI-assisted tooling, streamlined Figma library contributions, and smarter engineering task assignment for the design system',
+                    timeline: 'Proposals Due: End of Q3 2025',
+                },
+                ],
+            },
+        ],
       },
     ],
   },
