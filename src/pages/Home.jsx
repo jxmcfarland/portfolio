@@ -232,10 +232,14 @@ function CaseStudyDrawer({ study, onClose }) {
     const handleKey = e => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.width = '100%'
     closeRef.current?.focus()
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
     }
   }, [onClose])
 
@@ -268,7 +272,7 @@ function CaseStudyDrawer({ study, onClose }) {
 
   return (
     <>
-      <div className="drawer-backdrop" onClick={onClose} aria-hidden="true" />
+      <div className="drawer-backdrop" onClick={onClose} aria-hidden="true" onTouchMove={e => e.preventDefault()} />
       <div
         className="drawer"
         role="dialog"

@@ -327,9 +327,10 @@
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 200;
   animation: fadeIn 200ms ease;
+  touch-action: none;
 }
 
 .drawer {
