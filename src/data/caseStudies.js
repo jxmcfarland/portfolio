@@ -204,9 +204,14 @@ export const caseStudies = [
             heading: 'What I Inherited',
             bullets: [
                 'Fragmented standards and crude sharing methods, with no processes to enforce reuse or quality',
+                'Inconsistent components, color usage, and overall design quality',
                 'Slow and error-prone design-to-development handoffs, merge requests often stalled due to rework',
                 'UX strategy misaligned with user expectations — customers reported dissatisfaction with UI performance and usability',
                 'An understaffed, outsourced design team bound to third-party processes',
+            ],
+            images: [
+                { src: '/images/canto-gallery-v2.png', alt: 'Canto asset library — legacy gallery view before redesign' },
+                { src: '/images/canto-settings.png', alt: 'Canto settings page — legacy UI before redesign' },
             ],
             },
             {
@@ -220,24 +225,19 @@ export const caseStudies = [
         subsections: [
             {
             heading: 'Built an In-House UX Team',
-            bullets: [
-                'Began transforming the organization by hiring Canto\'s first in-house designer',
-                'Together, established the first iteration of a lightweight design system in Figma to bring structure and consistency to design work',
-            ],
+            content: 'I began transforming the organization by hiring Canto’s first in-house designer. Together, we established the first iteration of a lightweight design system in Figma to bring structure and consistency to design work.',
             },
             {
             heading: 'Reclaimed Design Ownership',
-            bullets: [
-                'Introducing accessibility-compliant colors and a small but growing component library reduced inconsistencies and demonstrated the value of shared standards',
+            content: 'What started as a self-guided side project became the foundation for standardization. By introducing accessibility-compliant colors and a small but growing component library, we reduced inconsistencies and demonstrated the value of shared standards.',
+            stackImages: true,
+            images: [
+                { src: '/images/cosmo-palette.png', alt: 'Cosmo design system — global color palette tokens' },
             ],
             },
             {
             heading: 'Established Trust Across the Delivery Organization',
-            bullets: [
-                'As the system matured, design-related merge request approval times dropped from days to hours',
-                'Demonstrated measurable improvement rebuilt trust with engineering and product stakeholders',
-                'Created momentum for greater investment',
-            ],
+            content: 'As the system matured, design-related merge request approval times dropped from days to hours. Demonstrated measurable improvement rebuilt trust with engineering and product stakeholders and created momentum for greater investment.',
             },
         ],
         },
@@ -246,39 +246,35 @@ export const caseStudies = [
         subsections: [
             {
             heading: 'Built Cosmo Alongside Platform Redesign',
-            bullets: [
-                'When Canto\'s v2 platform redesign was initiated, I secured leadership buy-in to create a true design system in parallel',
-                'This became Cosmo, our second-generation design system',
-                'Canto introduced a scalable Figma framework with atomic libraries — atoms, molecules, organisms, pages and design tokens implemented as a centralized Figma variables file',
-                'Also defined a new Storybook repo to synchronize engineering components and phase out the legacy repo',
-            ],
+            stackImages: true,
+            content: 'When Canto\'s v2 platform redesign was initiated, I secured leadership buy-in to create a true design system in parallel. This became Cosmo, our second-generation design system.',
+            content2: 'Canto introduced a scalable Figma framework with atomic libraries — atoms, molecules, organisms, pages and design tokens implemented as a centralized Figma variables file. We also defined a new Storybook repo to synchronize engineering components and phase out the legacy repo.',
             images: [
-                { src: '/images/cosmo-ds.png', alt: 'Cosmo design system component library' },
+            { src: '/images/cosmo-button-docs.png', alt: 'Cosmo design system — button component documentation' },
+            { src: '/images/cosmo-variables.png', alt: 'Cosmo design system — Figma variables and design tokens' },
             ],
             },
             {
             heading: 'Defined System Governance',
-            bullets: [
-                'Authored a UX Definition of Done, embedding accessibility, quality standards, and handoff requirements into the delivery culture for the first time',
-                'Defined a hybrid contribution model through research, collaboration, and prior design system experience',
-                'Balancing centralized oversight with distributed participation across pods',
-            ],
+            content: 'I authored a UX Definition of Done, embedding accessibility, quality standards, and handoff requirements into the delivery culture for the first time. The team also defined a hybrid contribution model through research, collaboration, and prior design system experience — balancing centralized oversight with distributed participation across pods.',
             },
         ],
         },
         {
         title: 'Outcomes & Impact',
+        hasLayout: true,
         subsections: [
             {
             heading: 'Organizational Shift',
             fullWidth: true,
-            bullets: [
-                '100% of UX team adopted and contributes to Cosmo',
-                '25% of development pods actively contributing components',
+            orgMetrics: [
+                { value: '100%', label: 'UX team adopted and contributes to Cosmo', trend: 'up' },
+                { value: '25%', label: 'Development pods actively contributing components', trend: 'up' },
             ],
             },
             {
             heading: 'Process Maturity',
+            fullWidth: true,
             bullets: [
                 'Merge request approval times reduced from days and hours to under 60 minutes',
                 'Storybook fully integrated into the product culture for the first time',
@@ -288,22 +284,21 @@ export const caseStudies = [
             },
             {
             heading: 'UX Impact',
+            fullWidth: true,
             bullets: [
                 'Unified and modernized visual design language addressed user feedback that the interface looked dated and unappealing',
                 'Systemized components improved product consistency and usability',
                 'Users experienced a more coherent and accessible platform interface',
             ],
+            imageQuote: {
+                image: { src: '/images/canto-portals.png', alt: 'Canto redesigned Portals view' },
+                quote: 'This is much slicker, a big improvement. Really like this. Very clean and simple and the left navigation is easy to understand at a glance. — Beta User, North America',
             },
-        ],
-        metrics: [
-            { value: '100%', label: 'UX team adoption of Cosmo design system', trend: 'up' },
-            { value: '25%', label: 'Development pods actively contributing components', trend: 'up' },
-            { value: '60min', label: 'Merge request approval time reduced to under 60 minutes', trend: 'down' },
+            },
         ],
         },
         {
-        title: 'Reflections & What\'s Next',
-        hasLayout: true,
+        title: "Reflections & What's Next",
         subsections: [
             {
             heading: 'What Was Achieved',
@@ -316,30 +311,12 @@ export const caseStudies = [
             },
             {
             heading: "What's Next",
+            fullWidth: true,
+            showAITools: true,
             bullets: [
                 'Expand development team participation beyond 25%',
                 'Increase coverage of systemized components in Storybook',
                 'Explore AI-driven contributions and automation to accelerate design system growth',
-            ],
-            whatsNext: [
-                {
-                icon: 'metadata',
-                title: 'Expand Dev Participation',
-                desc: 'Scale engineering contributions beyond 25% of pods',
-                timeline: 'Target: Q3 2025',
-                },
-                {
-                icon: 'portals',
-                title: 'Storybook Coverage',
-                desc: 'Increase systemized component coverage across the platform',
-                timeline: 'Ongoing',
-                },
-                {
-                icon: 'ops',
-                title: 'AI-Driven Contributions',
-                desc: 'Explore automation and AI tooling to accelerate design system growth',
-                timeline: 'Research: Q4 2025',
-                },
             ],
             },
         ],

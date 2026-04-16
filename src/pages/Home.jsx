@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { caseStudies, workExamples } from '../data/caseStudies'
 import OrgChart from '../components/OrgChart'
+import AIToolsCollage from '../components/AIToolsCollage'
 
 export default function Home() {
   return (
@@ -102,6 +103,7 @@ function SubSection({ sub, setLightbox }) {
     <div className="cs-subsection">
       {sub.heading && <h4 className="cs-subsection-title">{sub.heading}</h4>}
       {sub.content && <p>{sub.content}</p>}
+      {sub.content2 && <p>{sub.content2}</p>}
       {sub.bullets && (
         <div className="cs-bullets-quotes">
           <ul className="cs-bullets">
@@ -120,7 +122,7 @@ function SubSection({ sub, setLightbox }) {
         </div>
       )}
       {sub.images && (
-        <div className="cs-images">
+        <div className={`cs-images${sub.stackImages ? ' cs-images--stacked' : ''}`}>
           {sub.images.map((img, k) => (
             <button key={k} className="cs-image-btn" onClick={() => setLightbox(img)} aria-label={`View larger: ${img.alt}`}>
               <img src={img.src} alt={img.alt} className="cs-image" />
@@ -130,6 +132,7 @@ function SubSection({ sub, setLightbox }) {
         </div>
       )}
       {sub.showOrgChart && <OrgChart />}
+      {sub.showAITools && <AIToolsCollage />}
     </div>
   )
 }
@@ -199,10 +202,62 @@ function TwoColumnSection({ section, setLightbox }) {
         <div key={j} className="cs-subsection">
           {sub.heading && <h4 className="cs-subsection-title">{sub.heading}</h4>}
           {sub.content && <p>{sub.content}</p>}
+          {sub.content2 && <p>{sub.content2}</p>}
           {sub.bullets && (
             <ul className="cs-bullets">
               {sub.bullets.map((b, k) => <li key={k}>{b}</li>)}
             </ul>
+          )}
+          {sub.images && (
+            <div className={`cs-images${sub.stackImages ? ' cs-images--stacked' : ''}`}>
+              {sub.images.map((img, k) => (
+                <button key={k} className="cs-image-btn" onClick={() => setLightbox(img)} aria-label={`View larger: ${img.alt}`}>
+                  <img src={img.src} alt={img.alt} className="cs-image" />
+                  <span className="cs-image-hint">Click to enlarge</span>
+                </button>
+              ))}
+            </div>
+          )}
+          {sub.quotes && (
+            <div className="cs-quotes">
+              {sub.quotes.map((q, k) => (
+                <div key={k} className="cs-quote">
+                  <span className="cs-quote__mark">&ldquo;</span>
+                  <span className="cs-quote__text">{q}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          {sub.imageQuote && (
+            <div className="cs-image-quote">
+              <button
+                className="cs-image-btn"
+                onClick={() => setLightbox(sub.imageQuote.image)}
+                aria-label={`View larger: ${sub.imageQuote.image.alt}`}
+              >
+                <img src={sub.imageQuote.image.src} alt={sub.imageQuote.image.alt} className="cs-image" />
+                <span className="cs-image-hint">Click to enlarge</span>
+              </button>
+              <div className="cs-quote">
+                <span className="cs-quote__mark">&ldquo;</span>
+                <span className="cs-quote__text">{sub.imageQuote.quote}</span>
+              </div>
+            </div>
+          )}
+          {sub.orgMetrics && (
+            <div className="cs-org-metrics">
+              {sub.orgMetrics.map((m, k) => (
+                <div key={k} className="cs-org-metric">
+                  <div className="cs-metric__value-row">
+                    <span className={`cs-metric__trend cs-metric__trend--${m.trend}`}>
+                      {m.trend === 'down' ? '\u2193' : '\u2191'}
+                    </span>
+                    <span className="cs-metric__value">{m.value}</span>
+                  </div>
+                  <span className="cs-metric__label">{m.label}</span>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       ))}
