@@ -109,11 +109,14 @@ function SubSection({ sub, setLightbox }) {
           </ul>
           {sub.quotes && (
             <div className="cs-quotes">
-              {sub.quotes.map((q, k) => (
-                <blockquote key={k} className="cs-quote">{q}</blockquote>
-              ))}
+                {sub.quotes.map((q, k) => (
+                    <div key={k} className="cs-quote">
+                        <span className="cs-quote__mark">&ldquo;</span>
+                        <span className="cs-quote__text">{q}</span>
+                    </div>
+                ))}
             </div>
-          )}
+        )}
         </div>
       )}
       {sub.images && (
