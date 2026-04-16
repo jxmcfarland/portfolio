@@ -88,14 +88,14 @@
   line-height: 1.1;
   margin-top: var(--space-4);
   margin-bottom: var(--space-6);
-  max-width: 14ch;
+  max-width: 100%;
   color: var(--color-ink);
 }
 
 .hero__sub {
   font-size: var(--text-lg);
   color: var(--color-ink-muted);
-  max-width: 52ch;
+  max-width: 100%;
   line-height: 1.7;
 }
 
