@@ -182,20 +182,170 @@ export const caseStudies = [
   },
   {
     id: 2,
-    slug: 'case-study-02',
+    slug: 'building-cosmo-design-system',
     label: 'Case Study 02',
-    title: 'Project Title Here',
-    summary: 'A brief one or two sentence summary shown on the card.',
-    tags: ['Enterprise UX', 'Design Ops', 'Team Leadership'],
-    role: 'Your Role',
-    company: 'Company Name',
-    year: '2023',
+    title: 'Building Cosmo, Canto\'s Design System',
+    summary: 'Built Canto\'s first design system from the ground up — establishing shared standards, improving delivery velocity, and scaling design quality across a growing SaaS platform.',
+    tags: ['Design Systems', 'Design Leadership', 'Platform Redesign', 'Accessibility'],
+    role: 'Senior Director, User Experience',
+    company: 'Canto',
+    year: '2023-2025',
+    heroImage: '/images/cosmo-hero.png',
+    cardImage: '/images/cosmo-hero.png',
     sections: [
-      { title: 'The Problem', content: 'Describe the problem you were hired to solve.' },
-      { title: 'The Approach', content: 'Describe your process, methods, and key decisions.' },
-      { title: 'The Outcome', content: 'Describe the results, metrics, or impact.' },
+        {
+        title: 'Context & Challenge',
+        subsections: [
+            {
+            heading: 'About Canto',
+            content: 'Canto is a leading Digital Asset Management (DAM) platform. When I joined, the design organization was fully outsourced, resulting in inconsistent design quality, slower delivery cycles, and growing user dissatisfaction with the product experience.',
+            },
+            {
+            heading: 'What I Inherited',
+            bullets: [
+                'Fragmented standards and crude sharing methods, with no processes to enforce reuse or quality',
+                'Slow and error-prone design-to-development handoffs, merge requests often stalled due to rework',
+                'UX strategy misaligned with user expectations — customers reported dissatisfaction with UI performance and usability',
+                'An understaffed, outsourced design team bound to third-party processes',
+            ],
+            },
+            {
+            heading: 'The Ask',
+            content: 'There was no formal request to build a design system. I initiated this work to improve design consistency, velocity, and credibility of the UX team. The early success of the grassroots effort eventually secured leadership investment to establish Cosmo as a core part of Canto\'s platform strategy.',
+            },
+        ],
+        },
+        {
+        title: 'Transformation',
+        subsections: [
+            {
+            heading: 'Built an In-House UX Team',
+            bullets: [
+                'Began transforming the organization by hiring Canto\'s first in-house designer',
+                'Together, established the first iteration of a lightweight design system in Figma to bring structure and consistency to design work',
+            ],
+            },
+            {
+            heading: 'Reclaimed Design Ownership',
+            bullets: [
+                'Introducing accessibility-compliant colors and a small but growing component library reduced inconsistencies and demonstrated the value of shared standards',
+            ],
+            },
+            {
+            heading: 'Established Trust Across the Delivery Organization',
+            bullets: [
+                'As the system matured, design-related merge request approval times dropped from days to hours',
+                'Demonstrated measurable improvement rebuilt trust with engineering and product stakeholders',
+                'Created momentum for greater investment',
+            ],
+            },
+        ],
+        },
+        {
+        title: 'DAM Redesign & Design System Growth',
+        subsections: [
+            {
+            heading: 'Built Cosmo Alongside Platform Redesign',
+            bullets: [
+                'When Canto\'s v2 platform redesign was initiated, I secured leadership buy-in to create a true design system in parallel',
+                'This became Cosmo, our second-generation design system',
+                'Canto introduced a scalable Figma framework with atomic libraries — atoms, molecules, organisms, pages and design tokens implemented as a centralized Figma variables file',
+                'Also defined a new Storybook repo to synchronize engineering components and phase out the legacy repo',
+            ],
+            images: [
+                { src: '/images/cosmo-ds.png', alt: 'Cosmo design system component library' },
+            ],
+            },
+            {
+            heading: 'Defined System Governance',
+            bullets: [
+                'Authored a UX Definition of Done, embedding accessibility, quality standards, and handoff requirements into the delivery culture for the first time',
+                'Defined a hybrid contribution model through research, collaboration, and prior design system experience',
+                'Balancing centralized oversight with distributed participation across pods',
+            ],
+            },
+        ],
+        },
+        {
+        title: 'Outcomes & Impact',
+        subsections: [
+            {
+            heading: 'Organizational Shift',
+            fullWidth: true,
+            bullets: [
+                '100% of UX team adopted and contributes to Cosmo',
+                '25% of development pods actively contributing components',
+            ],
+            },
+            {
+            heading: 'Process Maturity',
+            bullets: [
+                'Merge request approval times reduced from days and hours to under 60 minutes',
+                'Storybook fully integrated into the product culture for the first time',
+                'Clearer prioritization and assignment processes established, though still evolving as the system scales',
+                'Reduced design debt accelerated the pace of delivery',
+            ],
+            },
+            {
+            heading: 'UX Impact',
+            bullets: [
+                'Unified and modernized visual design language addressed user feedback that the interface looked dated and unappealing',
+                'Systemized components improved product consistency and usability',
+                'Users experienced a more coherent and accessible platform interface',
+            ],
+            },
+        ],
+        metrics: [
+            { value: '100%', label: 'UX team adoption of Cosmo design system', trend: 'up' },
+            { value: '25%', label: 'Development pods actively contributing components', trend: 'up' },
+            { value: '60min', label: 'Merge request approval time reduced to under 60 minutes', trend: 'down' },
+        ],
+        },
+        {
+        title: 'Reflections & What\'s Next',
+        hasLayout: true,
+        subsections: [
+            {
+            heading: 'What Was Achieved',
+            fullWidth: true,
+            bullets: [
+                'Proving value through a grassroots effort was critical to securing investment',
+                'Embedding accessibility into the Definition of Done created lasting cultural change',
+                'A hybrid contribution model is key to scaling adoption without sacrificing quality',
+            ],
+            },
+            {
+            heading: "What's Next",
+            bullets: [
+                'Expand development team participation beyond 25%',
+                'Increase coverage of systemized components in Storybook',
+                'Explore AI-driven contributions and automation to accelerate design system growth',
+            ],
+            whatsNext: [
+                {
+                icon: 'metadata',
+                title: 'Expand Dev Participation',
+                desc: 'Scale engineering contributions beyond 25% of pods',
+                timeline: 'Target: Q3 2025',
+                },
+                {
+                icon: 'portals',
+                title: 'Storybook Coverage',
+                desc: 'Increase systemized component coverage across the platform',
+                timeline: 'Ongoing',
+                },
+                {
+                icon: 'ops',
+                title: 'AI-Driven Contributions',
+                desc: 'Explore automation and AI tooling to accelerate design system growth',
+                timeline: 'Research: Q4 2025',
+                },
+            ],
+            },
+        ],
+        },
     ],
-  },
+    },
 ]
 
 export const workExamples = [
