@@ -224,6 +224,9 @@ function TwoColumnSection({ section, setLightbox }) {
 function CaseStudyDrawer({ study, onClose }) {
   const closeRef = useRef(null)
   const [lightbox, setLightbox] = useState(null)
+  const drawerRef = useRef(null)
+  const touchStartX = useRef(null)
+  const touchCurrentX = useRef(null)
 
   useEffect(() => {
     const handleKey = e => { if (e.key === 'Escape') onClose() }
@@ -236,10 +239,46 @@ function CaseStudyDrawer({ study, onClose }) {
     }
   }, [onClose])
 
+  const handleTouchStart = e => {
+    touchStartX.current = e.touches[0].clientX
+    touchCurrentX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = e => {
+    touchCurrentX.current = e.touches[0].clientX
+    const delta = touchCurrentX.current - touchStartX.current
+    if (delta > 0 && drawerRef.current) {
+      drawerRef.current.style.transform = `translateX(${delta}px)`
+      drawerRef.current.style.transition = 'none'
+    }
+  }
+
+  const handleTouchEnd = () => {
+    const delta = touchCurrentX.current - touchStartX.current
+    if (drawerRef.current) {
+      drawerRef.current.style.transition = ''
+      drawerRef.current.style.transform = ''
+    }
+    if (delta > 80) {
+      onClose()
+    }
+    touchStartX.current = null
+    touchCurrentX.current = null
+  }
+
   return (
     <>
       <div className="drawer-backdrop" onClick={onClose} aria-hidden="true" />
-      <div className="drawer" role="dialog" aria-modal="true" aria-label={study.title}>
+      <div
+        className="drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label={study.title}
+        ref={drawerRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="drawer__inner">
           <div className="drawer__header">
             <p className="label">{study.label}</p>
