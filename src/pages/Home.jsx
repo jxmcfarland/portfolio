@@ -15,21 +15,40 @@ export default function Home() {
 }
 
 function Hero() {
+  const stats = [
+    { value: '15+', label: 'Years of UX Leadership', bg: '#FDF3F1' },
+    { value: '3', label: 'Head of UX at B2B-B2C SaaS Companies', bg: '#FAE8E4' },
+    { value: '5+', label: 'Led & Grew Teams of 5+ Designers', bg: '#F7DCD6' },
+    { value: '2', label: 'UX Organizations Built from the Ground Up', bg: '#F3CFC8' },
+  ]
+
   return (
     <section className="hero section" id="hero">
-      <div className="container">
-        <p className="label">UX and Product Design Leadership</p>
-        <h1 className="hero__headline">
-          Designing products<br />people actually use.
-        </h1>
-        <p className="hero__sub">
-          I am an experienced UX leader with a proven track record of building
-          high-performing teams, scaling systems, and aligning UX with both
-          product and business goals. A trusted advisor to executives, with deep
-          expertise in design systems, accessibility, research ops, and
-          AI-driven innovation across SaaS platforms.
-        </p>
-        <a href="#work" className="btn">View my work</a>
+      <div className="container hero__layout">
+        <div className="hero__left">
+          <p className="label">UX and Product Design Leadership</p>
+          <h1 className="hero__headline">
+            Designing products<br />people actually use.
+          </h1>
+          <p className="hero__sub">
+            I am an experienced UX leader with a proven track record of building
+            high-performing teams, scaling systems, and aligning UX with both
+            product and business goals. A trusted advisor to executives, with deep
+            expertise in design systems, accessibility, research ops, and
+            AI-driven innovation across SaaS platforms.
+          </p>
+          <a href="#work" className="btn">View my work</a>
+        </div>
+        <div className="hero__right">
+          <div className="hero__stats">
+            {stats.map((s, i) => (
+              <div key={i} className="hero__stat" style={{ background: s.bg }}>
+                <span className="hero__stat-value">{s.value}</span>
+                <span className="hero__stat-label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -38,6 +57,17 @@ function Hero() {
 function Work() {
   const [activeStudy, setActiveStudy] = useState(null)
   const [activeWork, setActiveWork] = useState(null)
+  const [scrollY, setScrollY] = useState(0)
+
+  const openStudy = (study) => {
+    setScrollY(window.scrollY)
+    setActiveStudy(study)
+  }
+
+  const openWork = (work) => {
+    setScrollY(window.scrollY)
+    setActiveWork(work)
+  }
 
   return (
     <section className="work section" id="work">
@@ -46,23 +76,22 @@ function Work() {
         <h2 className="section__heading">Case Studies</h2>
         <div className="cases">
           {caseStudies.map(c => (
-            <CaseCard key={c.id} study={c} onClick={() => setActiveStudy(c)} />
+            <CaseCard key={c.id} study={c} onClick={() => openStudy(c)} />
           ))}
         </div>
-
         <h2 className="section__heading section__heading--spaced">Work Examples</h2>
         <div className="work-grid">
           {workExamples.map(w => (
             <div
               key={w.id}
               className="work-card"
-              onClick={() => setActiveWork(w)}
+              onClick={() => openWork(w)}
               role="button"
               tabIndex={0}
               aria-label={`View work example: ${w.title}`}
-              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setActiveWork(w) }}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') openWork(w) }}
             >
-              <div className="work-card__img" aria-hidden="true" />{w.cardImage ? (
+              {w.cardImage ? (
                 <img src={w.cardImage} alt={`${w.title} preview`} className="work-card__img work-card__img--photo" />
               ) : (
                 <div className="work-card__img" aria-hidden="true" />
@@ -81,10 +110,18 @@ function Work() {
       </div>
 
       {activeStudy && (
-        <CaseStudyDrawer study={activeStudy} onClose={() => setActiveStudy(null)} />
+        <CaseStudyDrawer
+          study={activeStudy}
+          scrollY={scrollY}
+          onClose={() => setActiveStudy(null)}
+        />
       )}
       {activeWork && (
-        <WorkExampleDrawer work={activeWork} onClose={() => setActiveWork(null)} />
+        <WorkExampleDrawer
+          work={activeWork}
+          scrollY={scrollY}
+          onClose={() => setActiveWork(null)}
+        />
       )}
     </section>
   )
@@ -295,7 +332,7 @@ function TwoColumnSection({ section, setLightbox }) {
   )
 }
 
-function CaseStudyDrawer({ study, onClose }) {
+function CaseStudyDrawer({ study, scrollY, onClose }) {
   const closeRef = useRef(null)
   const [lightbox, setLightbox] = useState(null)
   const drawerRef = useRef(null)
@@ -308,14 +345,19 @@ function CaseStudyDrawer({ study, onClose }) {
     document.body.style.overflow = 'hidden'
     document.body.style.position = 'fixed'
     document.body.style.width = '100%'
+    document.body.style.top = `-${scrollY}px`
     closeRef.current?.focus()
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
       document.body.style.position = ''
       document.body.style.width = ''
+      document.body.style.top = ''
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: scrollY, behavior: 'instant' })
+      })
     }
-  }, [onClose])
+  }, [onClose, scrollY])
 
   const handleTouchStart = e => {
     touchStartX.current = e.touches[0].clientX
@@ -421,7 +463,7 @@ function Lightbox({ src, alt, onClose }) {
   )
 }
 
-function WorkExampleDrawer({ work, onClose }) {
+function WorkExampleDrawer({ work, scrollY, onClose }) {
   const closeRef = useRef(null)
   const [lightbox, setLightbox] = useState(null)
   const drawerRef = useRef(null)
@@ -434,14 +476,19 @@ function WorkExampleDrawer({ work, onClose }) {
     document.body.style.overflow = 'hidden'
     document.body.style.position = 'fixed'
     document.body.style.width = '100%'
+    document.body.style.top = `-${scrollY}px`
     closeRef.current?.focus()
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
       document.body.style.position = ''
       document.body.style.width = ''
+      document.body.style.top = ''
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: scrollY, behavior: 'instant' })
+      })
     }
-  }, [onClose])
+  }, [onClose, scrollY])
 
   const handleTouchStart = e => {
     touchStartX.current = e.touches[0].clientX
@@ -589,7 +636,7 @@ function Contact() {
         <p className="label">Get in touch</p>
         <h2 className="section__heading">Lets talk.</h2>
         <p className="contact__sub">
-          I am currently open to Senior Director and VP-level UX opportunities.
+          I am currently open to Senior Manager and Director-level UX opportunities.<br></br>
           If you are building something worth using, I would love to hear about it.
         </p>
         <a href="mailto:jxmcfarland@gmail.com" className="btn">Say hello</a>

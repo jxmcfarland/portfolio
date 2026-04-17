@@ -6,8 +6,8 @@
 
 /* ── Light Mode Tokens ── */
 :root {
-  --color-bg:        #F7F5F2;
-  --color-surface:   #EFEDE9;
+  --color-bg:        #FAFAF8;
+  --color-surface:   #F2F1EF;
   --color-ink:       #1C1C1C;
   --color-ink-muted: #6B6760;
   --color-accent:    #3D6B5F;
