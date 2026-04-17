@@ -37,6 +37,8 @@ function Hero() {
 
 function Work() {
   const [activeStudy, setActiveStudy] = useState(null)
+  const [activeWork, setActiveWork] = useState(null)
+
   return (
     <section className="work section" id="work">
       <div className="container">
@@ -47,11 +49,24 @@ function Work() {
             <CaseCard key={c.id} study={c} onClick={() => setActiveStudy(c)} />
           ))}
         </div>
+
         <h2 className="section__heading section__heading--spaced">Work Examples</h2>
         <div className="work-grid">
           {workExamples.map(w => (
-            <div key={w.id} className="work-card">
-              <div className="work-card__img" aria-hidden="true" />
+            <div
+              key={w.id}
+              className="work-card"
+              onClick={() => setActiveWork(w)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View work example: ${w.title}`}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setActiveWork(w) }}
+            >
+              <div className="work-card__img" aria-hidden="true" />{w.cardImage ? (
+                <img src={w.cardImage} alt={`${w.title} preview`} className="work-card__img work-card__img--photo" />
+              ) : (
+                <div className="work-card__img" aria-hidden="true" />
+              )}
               <div className="work-card__body">
                 <h3 className="work-card__title">{w.title}</h3>
                 <p className="work-card__role">{w.role}</p>
@@ -64,8 +79,12 @@ function Work() {
           ))}
         </div>
       </div>
+
       {activeStudy && (
         <CaseStudyDrawer study={activeStudy} onClose={() => setActiveStudy(null)} />
+      )}
+      {activeWork && (
+        <WorkExampleDrawer work={activeWork} onClose={() => setActiveWork(null)} />
       )}
     </section>
   )
@@ -399,6 +418,127 @@ function Lightbox({ src, alt, onClose }) {
       <img src={src} alt={alt} className="lightbox-img" onClick={e => e.stopPropagation()} />
       <button className="lightbox-close btn" onClick={onClose}>Close</button>
     </div>
+  )
+}
+
+function WorkExampleDrawer({ work, onClose }) {
+  const closeRef = useRef(null)
+  const [lightbox, setLightbox] = useState(null)
+  const drawerRef = useRef(null)
+  const touchStartX = useRef(null)
+  const touchCurrentX = useRef(null)
+
+  useEffect(() => {
+    const handleKey = e => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.width = '100%'
+    closeRef.current?.focus()
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+  }, [onClose])
+
+  const handleTouchStart = e => {
+    touchStartX.current = e.touches[0].clientX
+    touchCurrentX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = e => {
+    touchCurrentX.current = e.touches[0].clientX
+    const delta = touchCurrentX.current - touchStartX.current
+    if (delta > 0 && drawerRef.current) {
+      drawerRef.current.style.transform = `translateX(${delta}px)`
+      drawerRef.current.style.transition = 'none'
+    }
+  }
+
+  const handleTouchEnd = () => {
+    const delta = touchCurrentX.current - touchStartX.current
+    if (drawerRef.current) {
+      drawerRef.current.style.transition = ''
+      drawerRef.current.style.transform = ''
+    }
+    if (delta > 80) onClose()
+    touchStartX.current = null
+    touchCurrentX.current = null
+  }
+
+  return (
+    <>
+      <div className="drawer-backdrop" onClick={onClose} aria-hidden="true" onTouchMove={e => e.preventDefault()} />
+      <div
+        className="drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label={work.title}
+        ref={drawerRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div className="drawer__inner">
+          <div className="drawer__header">
+            <p className="label">Work Example</p>
+            <h2 className="cs-title">{work.title}</h2>
+            <div className="cs-meta">
+              <span>{work.role}</span>
+              <span>{work.company}</span>
+              <span>{work.year}</span>
+            </div>
+            <div className="cs-tags">
+              {work.tags.map(t => <span key={t} className="tag">{t}</span>)}
+            </div>
+          </div>
+
+          <div className="cs-body">
+            {work.sections.map((section, i) => (
+              <div key={i} className="cs-section">
+                {section.title && <h3 className="cs-section-title">{section.title}</h3>}
+                {section.content && <p>{section.content}</p>}
+                {section.content2 && <p>{section.content2}</p>}
+                {section.numbered && (
+                  <ol className="cs-numbered">
+                    {section.numbered.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ol>
+                )}
+                {section.images && (
+                  <div className="cs-images">
+                    {section.images.map((img, j) => (
+                      <div key={j} className="cs-image-with-caption">
+                        <button
+                          className="cs-image-btn"
+                          onClick={() => setLightbox(img)}
+                          aria-label={`View larger: ${img.alt}`}
+                        >
+                          <img src={img.src} alt={img.alt} className="cs-image" />
+                          <span className="cs-image-hint">Click to enlarge</span>
+                        </button>
+                        {img.caption && <p className="cs-image-caption">{img.caption}</p>}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="drawer__footer">
+          <button ref={closeRef} className="drawer__close btn" onClick={onClose}>Close</button>
+        </div>
+      </div>
+
+      {lightbox && (
+        <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+      )}
+    </>
   )
 }
 

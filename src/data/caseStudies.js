@@ -328,11 +328,46 @@ export const caseStudies = [
 export const workExamples = [
   {
     id: 1,
-    title: 'Work Example Title',
-    role: 'Your Role',
-    description: 'A brief description of this piece of work.',
-    tags: ['Tag 1', 'Tag 2'],
-  },
+    slug: 'portals-redesign',
+    title: 'Canto: Portals Redesign',
+    role: 'Design Leader & Hands-on Contributor',
+    company: 'Canto',
+    year: '2024',
+    cardImage: '/images/portals-select-assets.png',
+    description: 'Led the UX evolution of Canto\'s Portals product through research, product strategy, and interaction design.',
+    tags: ['UX Design', 'Product Strategy', 'Interaction Design'],
+    sections: [
+        {
+        content: 'As a design leader and hands-on contributor, I helped drive Canto\'s UX evolution by leading the redesign of Portals, bringing together research, product strategy, and interaction design to deliver a more flexible and accessible customer experience.',
+        },
+        {
+        title: 'Background',
+        content: 'Canto\'s core value lies in helping customers store, organize, and share their digital assets, and Portals is the primary way they deliver curated collections to their end users. When I joined the company, Portals generally "worked," but long-standing UX issues and permissioning gaps were creating increasing frustration.',
+        content2: 'Although customers could often work around limitations, the experience felt inconsistent, inflexible, and out of step with modern expectations. As negative sentiment grew, and some customers began citing lack of investment in Portals as a reason for churn, leadership aligned on the need for a comprehensive redesign.',
+        },
+        {
+        title: 'Requirements',
+        content: 'Partnering closely with Product Management, my team synthesized insights from user outreach, feature requests, and customer support patterns to define the requirements for a successful transformation of Portals.',
+        content2: 'To move quickly and align cross-functionally, I co-facilitated a design sprint with the dedicated pod. Over the course of the week, we clarified problem areas, shaped solution concepts, and prioritized the improvements that would make the biggest impact. Our work surfaced several core themes:',
+        numbered: [
+            'Portal creation was complex and difficult to adapt to different use cases.',
+            'Custom branding produced inconsistent results and created ongoing accessibility risks.',
+            'Permissioning and sharing were too limited to support enterprise workflows.',
+        ],
+        },
+        {
+        title: 'Designs',
+        content: 'We evolved the initial sprint wireframes into higher-fidelity concepts and validated them with multiple customers. The direction that resonated most strongly was then refined into a complete end-to-end flow, which we presented to stakeholders before moving into formal usability testing and iteration.',
+        content2: 'Below are examples of key moments in the redesigned experience.',
+        images: [
+            { src: '/images/portals-select-assets.png', alt: 'Selecting assets from the main library to create a portal', caption: '1. Selecting assets from the main library to create a portal.' },
+            { src: '/images/portals-setup.png', alt: 'Simpler portal setup and permission model with AI', caption: '2. A simpler, more intuitive portal setup and permission model, with AI helping identify assets that match the portal\'s goals.' },
+            { src: '/images/portals-template.png', alt: 'AI assisted portal templating and branding', caption: '3. AI assisted portal templating and branding.' },
+            { src: '/images/portals-published.png', alt: 'The newly created portal ready for publishing', caption: '4. The newly created portal, ready for publishing.' },
+        ],
+        },
+    ],
+    },
   {
     id: 2,
     title: 'Work Example Title',

@@ -534,6 +534,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  margin-bottom: var(--space-6);
 }
 
 .cs-img-hero {
@@ -1150,4 +1151,46 @@
   .ai-tools-collage__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* ── Work Example Drawer ── */
+.cs-numbered {
+  list-style: decimal;
+  padding-left: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin-top: var(--space-4);
+}
+
+.cs-numbered li {
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.cs-image-with-caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cs-image-caption {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  font-style: italic;
+  text-align: left;
+}
+
+.work-card {
+  cursor: pointer;
+}
+
+.work-card__img--photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
 }
