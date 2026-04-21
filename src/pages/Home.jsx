@@ -605,7 +605,7 @@ function Skills() {
     },
     {
       title: 'Tools and Craft',
-      items: ['Figma and FigJam', 'Prototyping', 'Design systems', 'Accessibility (WCAG)'],
+      items: ['Figma, Claude, Lovable', 'Prototyping', 'Design systems', 'Accessibility (WCAG)'],
     },
   ]
 
