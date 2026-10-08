@@ -37,7 +37,7 @@ function Hero() {
             expertise in design systems, accessibility, research ops, and
             AI-driven innovation across SaaS platforms.
           </p>
-          <a href="#work" className="btn">View my work</a>
+          <a href="#work" className="btn" style={{ marginTop: 'var(--space-6)' }}>View my work</a>
         </div>
         <div className="hero__right">
           <div className="hero__stats">
