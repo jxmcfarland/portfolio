@@ -357,7 +357,7 @@ export const workExamples = [
         },
         {
         title: 'Designs',
-        content: 'The initial sprint wireframes were refined into higher-fidelity concepts and validated with multiple customers. The direction that resonated most strongly was then refined into a complete end-to-end flow, which was presented to the broader stakeholders before moving into formal usability testing and iteration.',
+        content: 'The initial sprint wireframes were refined into higher-fidelity concepts and validated with multiple customers. The strongest direction was then developed into a complete end-to-end flow and presented to broader stakeholders before moving into formal usability testing and further iteration.',
         content2: 'Below are examples of key moments in the redesigned experience.',
         images: [
             { src: '/images/portals-select-assets.png', alt: 'Selecting assets from the main library to create a portal', caption: '1. Selecting assets from the main library to create a portal.' },
