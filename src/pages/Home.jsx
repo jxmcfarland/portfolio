@@ -16,10 +16,10 @@ export default function Home() {
 
 function Hero() {
   const stats = [
-    { value: '15+', label: 'Years of UX Leadership', bg: '#FDF3F1' },
-    { value: '3', label: 'Head of UX at 3 B2B-B2C SaaS Companies', bg: '#FAE8E4' },
-    { value: '5+', label: 'Led & Grew Teams of 5+ Designers', bg: '#F7DCD6' },
-    { value: '2', label: 'UX Organizations Built from the Ground Up', bg: '#F3CFC8' },
+    { value: '15+', label: 'Years of UX Leadership', bg: '#F5F0FA' },
+    { value: '3', label: 'Head of UX at 3 B2B-B2C SaaS Companies', bg: '#EDE4F7' },
+    { value: '5+', label: 'Led & Grew Teams of 5+ Designers', bg: '#E3D5F2' },
+    { value: '2', label: 'UX Organizations Built from the Ground Up', bg: '#D9C7ED' },
   ]
 
   return (
