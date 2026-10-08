@@ -74,11 +74,11 @@
 }
 
 .btn:hover {
-  background: #2d5147;
+  background: #1F4A6E;
 }
 
 .btn:active {
-  background: #1e3830;
+  background: #153550;
 }
 
 .btn:focus-visible {
@@ -100,9 +100,9 @@
 }
 
 .btn--outline:hover {
-  background: var(--color-accent-btn);
+  background: #2C5F8A;
   color: #ffffff !important;
-  border-color: var(--color-accent-btn);
+  border-color: #2C5F8A;
 }
 
 .btn--outline:active {
