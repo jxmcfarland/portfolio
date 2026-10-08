@@ -26,7 +26,7 @@ function Hero() {
     <section className="hero section" id="hero">
       <div className="container hero__layout">
         <div className="hero__left">
-          <p className="label">UX and Product Design Leadership</p>
+          <p className="label">UX and Product Experience Leadership</p>
           <h1 className="hero__headline">
             Designing products<br />people actually use.
           </h1>

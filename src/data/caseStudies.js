@@ -23,7 +23,7 @@ export const caseStudies = [
             heading: 'What I Inherited',
             bullets: [
               'Design was fully outsourced, with no internal UX team or design leadership',
-              'Product decisions were externally owned and heavily influenced by legacy on-premises functionality',
+              'New product leadership was just established and product decisions were still externally owned and heavily influenced by legacy on-premises functionality',
               'The team was locked into outdated UX patterns to maintain feature parity, limiting innovation and scalability',
               'Cross-functional trust in design had eroded due to misalignment, lack of accountability, and design debt',
               'The experience, often described as dated and confusing, highlighted the need for a comprehensive redesign',
@@ -82,7 +82,7 @@ export const caseStudies = [
            {
             heading: 'Redesigned the Core Platform',
             bullets: [
-                'Led the successful redesign of Canto\'s asset library, the core of the DAM experience',
+                'Led the successful refresh of Canto\'s asset library, the core of the DAM experience',
                 'Established the company\'s first design system to enable consistency and scalability',
                 'Modernized the UI and workflows, with ongoing improvements to upload, metadata, search, and sharing based on user feedback',
             ],
@@ -124,15 +124,15 @@ export const caseStudies = [
             heading: 'Product and User Impact',
             bullets: [
                 'Simplified the asset library\'s interface and information architecture to improve core workflows and overall usability',
-                'Reduced poor UX feedback by 70% since the redesign began',
+                'Reduced poor UX feedback by 50% since the redesign began',
                 'Simplified upload, metadata, search, and sharing based on ongoing feedback',
             ],
             },
         ],
         metrics: [
-            { value: '70%', label: 'Reduction in negative UX feedback since redesign began', trend: 'down' },
+            { value: '50%', label: 'Reduction in negative UX feedback since redesign began', trend: 'down' },
             { value: '75%', label: 'Reduction in merge request approval time', trend: 'down' },
-            { value: '40%', label: 'Increase in design system adoption by Engineering', trend: 'up' },
+            { value: '25%', label: 'Increase in design system adoption by Engineering', trend: 'up' },
         ],
         },
       {
@@ -330,15 +330,15 @@ export const workExamples = [
     id: 1,
     slug: 'portals-redesign',
     title: 'Canto: Portals Redesign',
-    role: 'Design Leader & Hands-on Contributor',
+    role: 'Design Leader & Stakeholder',
     company: 'Canto',
     year: '2024',
     cardImage: '/images/canto-gallery-cropped.png',
-    description: 'Led the UX evolution of Canto\'s Portals product through research, product strategy, and interaction design.',
+    description: 'Oversaw the UX evolution of Canto\'s Portals product through research, product strategy, and interaction design.',
     tags: ['UX Design', 'Product Strategy', 'Interaction Design'],
     sections: [
         {
-        content: 'As a design leader and hands-on contributor, I helped drive Canto\'s UX evolution by leading the redesign of Portals, bringing together research, product strategy, and interaction design to deliver a more flexible and accessible customer experience.',
+        content: 'As a design leader and stakeholder, I helped drive Canto\'s UX evolution by overseeing the redesign of Portals, bringing together research, product strategy, and interaction design to deliver a more flexible and accessible customer experience.',
         },
         {
         title: 'Background',
@@ -348,7 +348,7 @@ export const workExamples = [
         {
         title: 'Requirements',
         content: 'Partnering closely with Product Management, my team synthesized insights from user outreach, feature requests, and customer support patterns to define the requirements for a successful transformation of Portals.',
-        content2: 'To move quickly and align cross-functionally, I co-facilitated a design sprint with the dedicated pod. Over the course of the week, we clarified problem areas, shaped solution concepts, and prioritized the improvements that would make the biggest impact. Our work surfaced several core themes:',
+        content2: 'To move quickly and align cross-functionally, I helped orchistrate a design sprint with the dedicated pod, coaching my lead designer through its facilitation. Over the course of the week, problem areas were clarified, conceptual solutions shaped, and biggest impact improvements prioritized on the roadmap. The sprint surfaced several core themes:',
         numbered: [
             'Portal creation was complex and difficult to adapt to different use cases.',
             'Custom branding produced inconsistent results and created ongoing accessibility risks.',
@@ -357,7 +357,7 @@ export const workExamples = [
         },
         {
         title: 'Designs',
-        content: 'We evolved the initial sprint wireframes into higher-fidelity concepts and validated them with multiple customers. The direction that resonated most strongly was then refined into a complete end-to-end flow, which we presented to stakeholders before moving into formal usability testing and iteration.',
+        content: 'The initial sprint wireframes were evolved into higher-fidelity concepts and validated with multiple customers. The direction that resonated most strongly was then refined into a complete end-to-end flow, which we presented to stakeholders before moving into formal usability testing and iteration.',
         content2: 'Below are examples of key moments in the redesigned experience.',
         images: [
             { src: '/images/portals-select-assets.png', alt: 'Selecting assets from the main library to create a portal', caption: '1. Selecting assets from the main library to create a portal.' },
