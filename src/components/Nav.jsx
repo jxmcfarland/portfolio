@@ -13,7 +13,7 @@ export default function Nav() {
           <a href="/#work">Work</a>
           <a href="/#skills">Skills</a>
           <a href="mailto:jxmcfarland@gmail.com">Contact</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn--outline">Resume</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         </nav>
 
         {/* Mobile hamburger */}

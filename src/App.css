@@ -1431,17 +1431,3 @@
     display: block;
   }
 }
-
-/* ── Dark Mode ── */
-@media (prefers-color-scheme: dark) {
-  .btn--outline {
-    color: var(--color-ink-muted);
-    border-color: var(--color-ink-muted);
-  }
-
-  .btn--outline:hover {
-    background: #2C5F8A;
-    color: #ffffff !important;
-    border-color: #2C5F8A;
-  }
-}
