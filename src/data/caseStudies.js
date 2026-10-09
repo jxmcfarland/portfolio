@@ -335,7 +335,7 @@ export const workExamples = [
     year: '2024',
     cardImage: '/images/canto-gallery-cropped.png',
     description: 'Oversaw the UX evolution of Canto\'s Portals product through research, product strategy, and interaction design.',
-    tags: ['UX Design', 'Product Strategy', 'Interaction Design'],
+    tags: ['Design Strategy', 'Product Strategy'],
     sections: [
         {
         content: 'As a design leader and stakeholder, I helped drive Canto\'s UX evolution by overseeing the redesign of Portals, bringing together research, product strategy, and interaction design to deliver a more flexible and accessible customer experience.',
