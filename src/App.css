@@ -1431,3 +1431,17 @@
     display: block;
   }
 }
+
+/* ── Dark Mode ── */
+@media (prefers-color-scheme: dark) {
+  .btn--outline {
+    color: #2C5F8A;
+    border-color: #2C5F8A;
+  }
+
+  .btn--outline:hover {
+    background: #2C5F8A;
+    color: #ffffff !important;
+    border-color: #2C5F8A;
+  }
+}
