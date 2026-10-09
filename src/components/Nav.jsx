@@ -37,7 +37,7 @@ export default function Nav() {
           <a href="/#work" onClick={() => setOpen(false)}>Work</a>
           <a href="/#skills" onClick={() => setOpen(false)}>Skills</a>
           <a href="mailto:jxmcfarland@gmail.com" onClick={() => setOpen(false)}>Contact</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="nav__cta">Resume</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Resume</a>
         </div>
       )}
     </header>
