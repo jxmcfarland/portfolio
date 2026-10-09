@@ -1435,13 +1435,13 @@
 /* ── Dark Mode ── */
 @media (prefers-color-scheme: dark) {
   .btn--outline {
-    color: #ffffff;
-    border-color: #2C5F8A;
+    color: var(--color-ink-muted);
+    border-color: var(--color-ink-muted);
   }
 
   .btn--outline:hover {
-    background: #1F4A6E;
+    background: #2C5F8A;
     color: #ffffff !important;
-    border-color: #1F4A6E;
+    border-color: #2C5F8A;
   }
 }
