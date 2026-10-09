@@ -1416,7 +1416,7 @@
 }
 
 .nav__mobile-menu .nav__cta {
-  color: var(--color-accent) !important;
+  color: var(--color-ink-muted);
   border: none;
   padding: 0;
 }
