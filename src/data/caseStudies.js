@@ -334,8 +334,8 @@ export const workExamples = [
     company: 'Canto',
     year: '2024',
     cardImage: '/images/canto-gallery-cropped.png',
-    description: 'Oversaw the UX evolution of Canto\'s Portals product through research, product strategy, and interaction design.',
-    tags: ['Design Strategy', 'Product Strategy'],
+    description: 'Oversaw the UX evolution of Canto\'s Portals product as a lead strategist and stakeholder.',
+    tags: ['User Research', 'Design Strategy', 'Product Strategy'],
     sections: [
         {
         content: 'As a design leader and stakeholder, I helped drive Canto\'s UX evolution by overseeing the redesign of Portals, bringing together research, product strategy, and interaction design to deliver a more flexible and accessible customer experience.',
@@ -347,8 +347,8 @@ export const workExamples = [
         },
         {
         title: 'Requirements',
-        content: 'Partnering closely with Product Management, my team synthesized insights from user outreach, feature requests, and customer support patterns to define the requirements for a successful transformation of Portals.',
-        content2: 'To move quickly and align cross-functionally, I helped orchistrate a design sprint with the dedicated pod, coaching my lead designer through its facilitation. Over the course of the week, problem areas were clarified, conceptual solutions shaped, and biggest impact improvements prioritized on the roadmap. The sprint surfaced several core themes:',
+        content: 'Working closely with Product Management, my team synthesized user feedback, feature requests, and customer support trends to define the requirements for a successful transformation of Portals.',
+        content2: 'To move quickly and build cross-functional alignment, I helped organize a design sprint with a dedicated team of product managers, designers, and engineers, coaching my lead designer as they facilitated it. Over the course of the week, we clarified problem areas, developed conceptual solutions, and prioritized the highest-impact improvements for the roadmap. The sprint surfaced several core themes:',
         numbered: [
             'Portal creation was complex and difficult to adapt to different use cases.',
             'Custom branding produced inconsistent results and created ongoing accessibility risks.',
